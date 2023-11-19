@@ -1,10 +1,7 @@
-import styled from "styled-components";
-const StyledImg = styled.img`
-    width: 100%;
-`;
+
 function Icon({src}) {
     return (
-            <StyledImg src={src} />
+            <img src={src} className="w-12 h-12"/>
     );
 }
 
