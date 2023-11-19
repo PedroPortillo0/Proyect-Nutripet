@@ -1,8 +1,16 @@
 
 
-export default function Enlaces({texto}) {
+export default function Enlaces({texto,lugar,callback}) {
+    let hasFuction = callback;
+    const handleClik = ()=>{
+
+        if(hasFuction){
+            callback();
+        }
+        
+    }
   return (
-    <a className="text-black">
+    <a className="text-black" href={`#${lugar}`} onClick={handleClik}>
       {texto}
     </a>
   )

@@ -18,7 +18,7 @@ export default function Landing() {
        <Nosotros medida={scrollY}/>
 
        {
-        (scrollY >= 710) &&  <FooterLandig/>
+      <FooterLandig scrollY={scrollY}/>
        }
        
     </div>

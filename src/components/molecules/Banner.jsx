@@ -12,7 +12,7 @@ export default function Banner() {
   }, []);
 
   return (
-    <div className="w-full bg-[#FFD25C] flex items-center flex-col gap-y-4 h-screen justify-center pb-[13%]">
+    <div className="w-full bg-[#FFD25C] flex items-center flex-col gap-y-4 h-screen justify-center pb-[13%]" id="inicio">
       <h1 className="w-1/2 text-[2rem] font-black text-center slide-in-blurred-top">
         Nosotros te facilitaremos todo para que todo sea facil
       </h1>

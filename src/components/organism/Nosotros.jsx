@@ -21,7 +21,7 @@ export default function Nosotros({ medida }) {
   console.log(medida)
 
   return (
-    <div className="flex items-center justify-center w-full h-screen gap-x-24">
+    <div className="flex items-center justify-center w-full h-screen gap-x-24" id="nosotros">
       {shouldShowImage && <img src={pollito} alt="" className="w-64 slide-in-left" />}
       {showText && (<div className="flex flex-col items-start fade-in"> 
       <h1 className="w-full mb-4 text-3xl font-bold text-center text-yellow-200">Nutri<span className="text-black ">Pet</span></h1>
