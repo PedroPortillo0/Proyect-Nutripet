@@ -5,17 +5,15 @@ import Register from '../pages/Register';
 import RecoverPassword from '../pages/RecoverPassword'
 import Landing from '../pages/Landing';
 function App() {
+  
   return ( 
     <BrowserRouter>
       <Routes>
-        {/* <Route path='/graf'element={<VistaGraficas/>}/> */}
+        <Route path = "/" element = {<Landing/>}/>
         <Route path='/Register'element={<Register/>}/>     
         <Route path='/login'element={<Login/>}/>     
         <Route path='/graficas'element={<VistaGraficas/>}/>
         <Route path='/recuperar'element={<RecoverPassword/>}/>     
-        <Route path = "/landing" element = {<Landing/>}/>
-
-
       </Routes>
     </BrowserRouter>
   )

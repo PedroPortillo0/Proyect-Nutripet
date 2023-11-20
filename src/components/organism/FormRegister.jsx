@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 
 
 import pollitoRegister from "../../assets/img/imagenes/pollito-registro.svg"
+import Input from "../atoms/Input";
 
 
 const StyledContainer = styled.div` 
@@ -15,9 +16,10 @@ const StyledContainer = styled.div`
   height: 82vh;
 
   @media (min-width: 1024px) { //para compu
+    /* border: 1px solid red ; */
     display: flex;
     width: 100%;
-    height: 85vh;
+    height: 99vh;
   }
 
 `;
@@ -32,12 +34,11 @@ const StyledContainRegit = styled.div` //movil
   width:100%;
   height: auto;
   @media (min-width: 1024px) {
-    /* border: 1px solid; */
     display: flex;
     align-items: center;
     padding: 80px 30px;
     width: 50%;
-    height: 94%;
+    height: 100%;
 
   }
 `;
@@ -85,7 +86,7 @@ const StyledContainTexto = styled.div`
   color: #FFF;
   text-align: center;
   font-family: Patua One;
-  font-size: 25px;
+  font-size: 55px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -137,7 +138,7 @@ const StyledContainInContra = styled.div`
       color: #FFB900;
       text-align: right;
       font-family: Raleway;
-      font-size: 20px;
+      font-size: 25px;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
@@ -156,20 +157,99 @@ const StyledContainInContra = styled.div`
   }
 `;
 const StyledContainButtonLogin = styled.div`
-  border: 1px solid red;
+  /* border: 1px solid red; */
   padding: 0;
   width:100%;
   height: auto;
   @media (min-width: 1024px) {
+    /* border: 1px solid; */
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 58%;
+    width: 100%;
     height: 10%;
     .button{
       /* border: 1px solid; */
-      width: 59%;
+      width: 40%;
       height: 50%;
+    }
+  }
+`;
+const StyledContainForm = styled.div`
+  padding: 0;
+  width:100%;
+  height: auto;
+  @media (min-width: 1024px) {
+    /* border: 1px solid; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 55%;
+    .nombre{
+      /* border: solid 1px red; */
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2%;
+      width: 100%;
+      height: 20%;
+      .name{
+        width: 213px;
+        height: 60px;
+        flex-shrink: 0;
+        border-radius: 10px;
+        border: 3px solid #D9D9D9;
+        color: #898989;
+        text-align: center;
+        font-family: Raleway;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      .apellido{
+        width: 213px;
+        height: 60px;
+        flex-shrink: 0;
+        border-radius: 10px;
+        border: 3px solid #D9D9D9;
+        color: #898989;
+        text-align: center;
+        font-family: Raleway;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      }
+    .correo{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      align-content: space-around;
+      /* border: 1px solid blue; */
+      width: 100%;
+      height: 80%;
+      .apellido{
+        width: 80%;
+        height: 60px;
+        flex-shrink: 0;
+        border-radius: 10px;
+        margin-bottom: 2%;
+        border: 3px solid #D9D9D9;
+        color: #898989;
+        text-align: center;
+        font-family: Raleway;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      } 
+    }
+    .form{
+      width: 100%;
+      height: 80%;
     }
   }
 `;
@@ -194,6 +274,7 @@ function FromRegister() {
             </StyledContainImagen>
           </StyledContaincolor>
         </StyledContainRegit>
+
         <StyledContainerForm>
           <StyledContainLogo>
             <h1 className="Nutri">Nutri</h1>
@@ -205,14 +286,51 @@ function FromRegister() {
           <StyledContainInContra>
             <h4 className="cuenta"> Ya tienes cuenta?</h4>
             <Link className="recuperar" to={"/login"}>Iniciar sesion</Link>
-            </StyledContainInContra>
-
-
+          </StyledContainInContra>
+          {/* el form aqui */}
+          <StyledContainForm>
+            <form className="form">
+              <div className="nombre">
+                <Input
+                  className={"name"}
+                  type={"text"}
+                  placeholder={"nombre"}
+                />
+                  <Input
+                  className={"apellido"}
+                  type={"text"}
+                  placeholder={"apellido"}
+                />
+              </div>
+              <div className="correo">
+              <Input
+                  className={"apellido"}
+                  type={"text"}
+                  placeholder={"correo"}
+                />
+                <Input
+                  className={"apellido"}
+                  type={"text"}
+                  placeholder={"usuario"}
+                />
+                <Input
+                  className={"apellido"}
+                  type={"password"}
+                  placeholder={"contraseña"}
+                />
+                <Input
+                  className={"apellido"}
+                  type={"password"}
+                  placeholder={"confirmar contraseña"}
+                />
+              </div>
+            </form>
+          </StyledContainForm>
           <StyledContainButtonLogin>
             <div className="button">
               <Button
               name={"Registrarse"}
-              link={"/graficas"}
+              link={"/login"}
               />
             </div>
 

@@ -1,6 +1,3 @@
-import Titulo from "../atoms/Titulo";
-
-
 import GroupEnlaces from "./GroupEnlaces";
 export default function NavLading() {
   return (

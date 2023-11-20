@@ -3,9 +3,9 @@ import styled from "styled-components";
 const StyledTitulo = styled.div`
     color: #000;
     font-family: Patua One;
-    font-size: 20px;
+    font-size: 35px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     line-height: normal;
 `;
 

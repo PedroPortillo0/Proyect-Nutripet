@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Titulo from "../atoms/Titulo";
-
+import { Link } from "react-router-dom";
+import Login from "../../pages/Login";
 export default function Banner() {
   const [isButtonVisible, setIsButtonVisible] = useState(false);
   const buttonRef = useRef(null);
@@ -17,9 +18,11 @@ export default function Banner() {
         Nosotros te facilitaremos todo para que todo sea facil
       </h1>
       {isButtonVisible && (
-        <button className="bg-[#FFB900] text-white rounded-xl text-2xl p-1 px-4 slide-in-blurred-top">
+        <a href="/login">
+        <button className="bg-[#FFB900] text-white rounded-xl text-2xl p-1 px-4 slide-in-blurred-top" >
           Comenzar
         </button>
+        </a>
       )}
     </div>
   );

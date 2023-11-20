@@ -19,7 +19,7 @@ const StyledContainer = styled.div`
   @media (min-width: 1024px) { //para compu
     display: flex;
     width: 100%;
-    height: 85vh;
+    height: 100vh;
   }
 
 `;
@@ -36,13 +36,12 @@ const StyledContainRegit = styled.div` //movil
   @media (min-width: 1024px) {
     display: flex;
     align-items: center;
-    padding: 80px 30px;
     width: 50%;
-    height: 94%;
-
+    height: auto;
   }
 `;
 const StyledContaincolor = styled.div`
+  
   padding: 0;
   width: 100%;
   height: 95vh;
@@ -74,10 +73,12 @@ const StyledContainImagenVirculo = styled.div`
   border-radius: 50%;
 `;
 const StyledContainImagenpollito = styled.div`
-  padding: 0;
-  width: 42%;
+/* border: 1px solid; */
+  width: 50%;
   height: 65%;
   position: absolute;
+  left: 48%;
+
 `;
 const StyledContainButton = styled.div`
   display: flex;
@@ -87,14 +88,16 @@ const StyledContainButton = styled.div`
   height: 50%;
 `;
 const StyledContainTexto = styled.div`
+  display: flex;
+  align-items: end;
   width: 60%;
   height: 50%;
   color: #FFF;
   text-align: center;
   font-family: Patua One;
-  font-size: 20px;
+  font-size: 45px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: normal;
 `;
 const StyledContainLogo = styled.div`
@@ -253,7 +256,6 @@ function FormLogin() {
                 <StyledContainImagenpollito>
                   <img src={pollitoLogin} alt="imagen aqui " />
                 </StyledContainImagenpollito>
-
               </StyledContainImagen>
             </StyledContaincolor>
           </StyledContainRegit>
