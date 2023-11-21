@@ -1,6 +1,8 @@
 import {CartesianGrid} from "recharts";
 import {LineChart,XAxis,YAxis,Tooltip,Legend,Line} from "recharts";
 
+import DropdownMenu from "../components/organism/MenuDropdown";
+
 function VistaGraficas() {
     const DataTemperatiraHumedad=[
         {temperatura:25, humedad:45},
@@ -16,8 +18,17 @@ function VistaGraficas() {
     ]
 
     return ( 
-        <>
-            <div className="linechart">
+        <div className="flex w-full h-screen pt-4">
+            {/*es este contendor div ira el aside*/}
+      
+          <div className="flex flex-col items-center w-1/4 bg-white rounded-sm shadow-sm shadow-black">
+          <h1 className="w-1/2 mb-4 text-3xl font-bold text-yellow-200">Nutri<span className="text-black ">Pet</span></h1>
+          <DropdownMenu/>
+          </div>
+          
+           {/*en este contenedor iran las graficas*/}
+           <div className="w-full">
+           <div className="linechart">
                     <h1 >grafica de lienas</h1>
                     <LineChart 
                     data={DataTemperatiraHumedad}
@@ -42,8 +53,9 @@ function VistaGraficas() {
             <div className="piechart">
 
             </div>
+           </div>
 
-        </>
+        </div>
         
         
      );
