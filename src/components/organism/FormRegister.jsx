@@ -157,7 +157,7 @@ const StyledContainInContra = styled.div`
   }
 `;
 const StyledContainButtonLogin = styled.div`
-  /* border: 1px solid red; */
+  // border: 1px solid red; 
   padding: 0;
   width:100%;
   height: auto;
@@ -187,14 +187,15 @@ const StyledContainForm = styled.div`
     width: 100%;
     height: 55%;
     .nombre{
-      /* border: solid 1px red; */
+    //  border: solid 1px red; 
       display: flex;
       justify-content: center;
+      justify-content: space-evenly;
       margin-bottom: 2%;
       width: 100%;
       height: 20%;
       .name{
-        width: 213px;
+        width: 240px;
         height: 60px;
         flex-shrink: 0;
         border-radius: 10px;
@@ -208,7 +209,7 @@ const StyledContainForm = styled.div`
         line-height: normal;
       }
       .apellido{
-        width: 213px;
+        width: 240px;
         height: 60px;
         flex-shrink: 0;
         border-radius: 10px;
