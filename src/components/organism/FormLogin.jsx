@@ -25,6 +25,7 @@ const StyledContainer = styled.div`
 `;
 const StyledContainerForm = styled.div` 
   @media (min-width: 1024px) {
+   /* border: 1px solid;  */
     width: 45%;
     height: 95vh; 
   }
@@ -34,6 +35,7 @@ const StyledContainRegit = styled.div` //movil
   width:100%;
   height: auto;
   @media (min-width: 1024px) {
+      /* border: 1px solid; */
     display: flex;
     align-items: center;
     width: 50%;
@@ -41,7 +43,7 @@ const StyledContainRegit = styled.div` //movil
   }
 `;
 const StyledContaincolor = styled.div`
-  
+  /* border: 1px solid; */
   padding: 0;
   width: 100%;
   height: 95vh;
@@ -49,6 +51,7 @@ const StyledContaincolor = styled.div`
   background-color: #FCF332;
 `;
 const StyledContainBotonRegist = styled.div`
+/* border: 1px solid red; */
   display: flex;
   flex-direction: column ;
   align-items: center;
@@ -57,6 +60,7 @@ const StyledContainBotonRegist = styled.div`
   height: 30%;
 `;
 const StyledContainImagen = styled.div`
+  /* border: 1px solid; */
   display: flex;
   align-items: end;
   justify-content: center;
@@ -75,17 +79,18 @@ const StyledContainImagenVirculo = styled.div`
 const StyledContainImagenpollito = styled.div`
 /* border: 1px solid; */
   width: 50%;
-  height: 65%;
+  height: auto; 
   position: absolute;
   left: 48%;
 
 `;
 const StyledContainButton = styled.div`
+/* border: 1px solid; */
   display: flex;
   align-items: center;
   padding: 0;
-  width: 35%;
-  height: 50%;
+  width: 45%;
+  height: 30%;
 `;
 const StyledContainTexto = styled.div`
   display: flex;
@@ -95,7 +100,7 @@ const StyledContainTexto = styled.div`
   color: #FFF;
   text-align: center;
   font-family: Patua One;
-  font-size: 45px;
+  font-size: 40px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -158,7 +163,7 @@ const StyledContainInContra = styled.div`
     justify-content: flex-end;
     align-items: center;
     width: 58%;
-    height: 5%;
+    height: 8%;
     .recuperar{
       color: #FFB900;
       text-align: right;
@@ -173,7 +178,6 @@ const StyledContainInContra = styled.div`
   }
 `;
 const StyledContainButtonLogin = styled.div`
-  /* border: 1px solid red; */
   padding: 0;
   width:100%;
   height: auto;
@@ -181,11 +185,10 @@ const StyledContainButtonLogin = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 58%;
+    width: 60%;
     height: 10%;
     .button{
-      /* border: 1px solid; */
-      width: 59%;
+      width: 60%;
       height: 50%;
     }
   }

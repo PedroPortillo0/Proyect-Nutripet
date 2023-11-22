@@ -160,10 +160,9 @@ const StyledContainInput = styled.div`
 const StyledContaincolor = styled.div`
 
   @media (min-width: 1024px) {
+    /* border: 1px solid; */
   padding: 0;
   width: 70%;
-  height: 95vh;
-  height: 99%;
   flex-shrink: 0;
   border-radius: 30px;
   background: #FCF332; 
@@ -175,8 +174,8 @@ const StyledContaincolor = styled.div`
     position: absolute;
     top: 45%;
     left: 68%;
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 450px;
     flex-shrink: 0;
     .imagen{}
     .cuadrito3{

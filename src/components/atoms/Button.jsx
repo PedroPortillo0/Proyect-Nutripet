@@ -16,10 +16,10 @@ font-size: 20px;
 font-family: patua one;
 color: #fff;
 font-weight: bold;
-padding: 5% 28%;
+padding: 5% ;
 border-radius: 16px ;
 border: none;
-width:100%;  //Cambio vigilado -Borrar en caso de ser necesario
+width:60%;  //Cambio vigilado -Borrar en caso de ser necesario
 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 .link{
     text-decoration: none;

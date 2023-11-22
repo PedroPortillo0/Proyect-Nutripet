@@ -30,6 +30,13 @@ const StyledInput= styled.input`
     @media (min-width: 1024px){
         width:${props => props.tamanio ?  '72%' : '80%'};
         width:65%;
+        background: #EEF1F0;
+        width:88%;
+        height: 50px;
+        padding: 0 11%;
+        border-radius: 8px;
+        border: none;
+        outline: none;
 
     }
 
@@ -42,20 +49,11 @@ const StyledImg = styled.img`
     width: 6%;
     height: 70%;
     @media (min-width: 1024px){
-        left: ${props => props.tamanioI ?  '9%' : '14%'};
+        left: ${props => props.tamanioI ?  '8%' : '14%'};
+            position: absolute;
     }
 
 `;
-// const StyledPass = styled.button`
-//     position: absolute;
-//     top: 11%;
-//     left: 13%;
-//     width: 6%;
-//     height: 70%;
-//     @media (min-width: 1024px){
-//         left: ${props => props.tamanioII ?  '0%' : '85%'};
-//     }
-// `;
 function GroupInput({src, tamanioI ,tamanio, type, placeholder, nombre,  }) {
     return ( 
         <StyledContainerInputs>

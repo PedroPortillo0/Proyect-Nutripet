@@ -77,7 +77,7 @@ const StyledContainImagenpollito = styled.div`
   /* border: 1px solid; */
   padding: 0;
   width: 38%;
-  height: 42%;
+  height: auto;
   position: absolute;
 `;
 const StyledContainTexto = styled.div`
@@ -86,7 +86,7 @@ const StyledContainTexto = styled.div`
   color: #FFF;
   text-align: center;
   font-family: Patua One;
-  font-size: 55px;
+  font-size: 45px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
