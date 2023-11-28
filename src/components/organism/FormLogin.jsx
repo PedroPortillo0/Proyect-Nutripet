@@ -4,6 +4,10 @@ import "../../pages/Register";
 import Titulo from "../atoms/Titulo";
 import SubTitulo from "../atoms/Subtitulo";
 import GroupInput from "../molecules/GroupInput";
+import React, { useRef } from 'react';
+import swal from 'sweetalert2';
+import { Navigate, useNavigate } from "react-router-dom";
+
 
 import pollitoLogin from "../../assets/img/imagenes/pollito-login.svg"
 import Email from "../../assets/img/icons/Email.png"
@@ -28,6 +32,11 @@ const StyledContainerForm = styled.div`
    /* border: 1px solid;  */
     width: 45%;
     height: 95vh; 
+    .form{
+      width: 100%;
+      height: 55%;
+      /* border: 1px solid; */
+    }
   }
 `;
 const StyledContainRegit = styled.div` //movil
@@ -150,7 +159,10 @@ const StyledContainInput = styled.div`
   height: auto;
   @media (min-width: 1024px) {
     width: 91%;
-    height: 17%;
+    height: 40%;
+    /* border: 1px solid; */
+    /* display: flex; */
+
   }
 `;
 const StyledContainInContra = styled.div`
@@ -159,6 +171,7 @@ const StyledContainInContra = styled.div`
   width:100%;
   height: auto;
   @media (min-width: 1024px) {
+    /* border: 1px solid;  */
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -173,7 +186,6 @@ const StyledContainInContra = styled.div`
       font-weight: 400;
       line-height: normal;
       text-decoration: none;
-
     }
   }
 `;
@@ -188,13 +200,80 @@ const StyledContainButtonLogin = styled.div`
     width: 60%;
     height: 10%;
     .button{
-      width: 60%;
+      width: 70%;
       height: 50%;
     }
   }
 `;
 
 function FormLogin() {
+  const navigate = useNavigate();
+  const endPoint = "http://54.147.241.142:9000/api/GetAll";
+
+const Form = useRef();
+const options = {
+  method: "GET",
+  headers: {
+    "Content-Type": "application/json",
+  },
+};
+
+function isValidLogin(users, correo, password) {
+  let user = null;
+  let flag = false;
+  for (let i = 0; i < users.length && !flag; i++) {
+    if (users[i].correo === correo && users[i].password === password) {
+      user = users[i];
+      flag = true;
+    }
+  }
+  return user;
+}
+const handlerClick = () => {
+  const newForm = new FormData(Form.current);
+  
+  fetch(endPoint, options)
+    .then((response) => response.json())
+    .then((data) => {
+    let correo = newForm.get("correo");
+    let password = newForm.get("password");
+    let user = isValidLogin(data, correo, password);
+    console.log(JSON.stringify(user));
+      // ... (tu lógica para obtener el usuario y validar las credenciales)
+
+      if (user != null) {
+        if (newForm.get("correo") === "wenson1980") {
+          swal.fire({
+            text: `Bienvenido`,
+            icon: 'success',
+          });
+        } else {
+          swal.fire({
+            text: `Bienvenido`,
+            icon: 'success',
+          });
+          navigate("/graficas");
+        }
+      } else {
+        swal.fire({
+          title: 'Oops...',
+          text: `Credenciales incorrectas. Inténtalo de nuevo.`,
+          icon: 'error',
+        });
+      }
+    })
+    .catch((error) => {
+      console.error('Error al realizar la solicitud:', error);
+      // Manejo de errores, muestra un mensaje de error al usuario si falla la solicitud
+      swal.fire({
+        title: 'Error',
+        text: 'Hubo un problema al procesar la solicitud. Inténtalo de nuevo más tarde.',
+        icon: 'error',
+      });
+    });
+};
+
+
     return ( 
         <StyledContainer>
           <StyledContainerForm>
@@ -208,34 +287,39 @@ function FormLogin() {
             <StyledContainSubTitulo>
               <SubTitulo msn={"Ingresar para descubrir más."}/>
             </StyledContainSubTitulo>
+            <form className="form" ref={Form}>
+            {/* inputs  */}
             <StyledContainInput>
               <GroupInput
                 src={Email}
                 tamanioI={true}
                 type={"text"}
                 placeholder={"Correo"}
-                nombre={"name_users"}
+                nombre={"correo"}
               />
               <GroupInput
                 src={Contrasenia}
                 tamanioI={true}
                 type={"password"}
                 placeholder={"Contraseña"}
-                nombre={"contrasenia"}
+                nombre={"password"}
               />
             </StyledContainInput>
+            {/* recuoerar contrasenia */}
             <StyledContainInContra>
             <Link className="recuperar" to={"/recuperar"}>¿Olvidaste tu contraseña?</Link>
             </StyledContainInContra>
+            {/* boton */}
             <StyledContainButtonLogin>
               <div className="button">
                 <Button
                 name={"Iniciar sesion"}
-                link={"/graficas"}
+                funcion={handlerClick}
                 />
               </div>
+            </StyledContainButtonLogin>  
 
-            </StyledContainButtonLogin>
+            </form>
           </StyledContainerForm>
 {/* ----------------------------------- */}
           <StyledContainRegit> 

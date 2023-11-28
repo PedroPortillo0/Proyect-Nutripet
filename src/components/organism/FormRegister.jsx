@@ -3,7 +3,9 @@ import Button from "../atoms/Button";
 import "../../pages/Register";
 import Titulo from "../atoms/Titulo";
 import { Link } from "react-router-dom";
-
+import { Navigate, useNavigate } from "react-router-dom";
+import React, { useRef } from 'react';
+import Swal from 'sweetalert2';
 
 
 import pollitoRegister from "../../assets/img/imagenes/pollito-registro.svg"
@@ -257,6 +259,63 @@ const StyledContainForm = styled.div`
 
 
 function FromRegister() {
+  const form = useRef();
+  const navigate = useNavigate();
+
+  const clickHandler = (e) => {
+  e.preventDefault();
+  const newForm = new FormData(form.current);
+
+  if (
+    newForm.get("name") === "" ||
+    newForm.get("apellido") === "" ||
+    newForm.get("correo") === "" ||
+    newForm.get("usuario") === "" ||
+    newForm.get("password") === "" ||
+    newForm.get("confirmarPassword") === ""
+  ) {
+    // Mostrar SweetAlert si hay campos vacíos
+    Swal.fire({
+      title: 'Error',
+      text: 'Por favor, completa todos los campos.',
+      icon: 'error',
+    });
+  } else {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Accept", "application/json");
+
+    var raw = JSON.stringify({
+      name: newForm.get("name"),
+      apellido: newForm.get("apellido"),
+      correo: newForm.get("correo"),
+      usuario: newForm.get("usuario"),
+      password: newForm.get("password"),
+      confirmarPassword: newForm.get("confirmarPassword"),
+    });
+
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    fetch("http://54.147.241.142:9000/api/create", requestOptions)
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.log("error", error));
+
+    Swal.fire({
+      title: '¡Felicidades!',
+      text: 'Registro exitoso.',
+      icon: 'success',
+    });
+
+    navigate("/login");
+  }
+};
+
     return ( 
         <StyledContainer>
             <StyledContainRegit> 
@@ -290,17 +349,19 @@ function FromRegister() {
           </StyledContainInContra>
           {/* el form aqui */}
           <StyledContainForm>
-            <form className="form">
+            <form className="form" ref={form}>
               <div className="nombre">
                 <Input
                   className={"name"}
                   type={"text"}
                   placeholder={"nombre"}
+                  nombre={"name "}
                 />
                   <Input
                   className={"apellido"}
                   type={"text"}
                   placeholder={"apellido"}
+                  nombre={"apellido"}
                 />
               </div>
               <div className="correo">
@@ -308,21 +369,25 @@ function FromRegister() {
                   className={"apellido"}
                   type={"text"}
                   placeholder={"correo"}
+                  nombre={"correo"}
                 />
                 <Input
                   className={"apellido"}
                   type={"text"}
                   placeholder={"usuario"}
+                  nombre={"usuario"}
                 />
                 <Input
                   className={"apellido"}
                   type={"password"}
                   placeholder={"contraseña"}
+                  nombre={"password"}
                 />
                 <Input
                   className={"apellido"}
                   type={"password"}
                   placeholder={"confirmar contraseña"}
+                  nombre={"confirmarPassword"}
                 />
               </div>
             </form>
@@ -331,7 +396,7 @@ function FromRegister() {
             <div className="button">
               <Button
               name={"Registrarse"}
-              link={"/login"}
+              funcion={clickHandler}
               />
             </div>
 

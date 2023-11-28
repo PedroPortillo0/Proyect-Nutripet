@@ -29,10 +29,10 @@ box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 `;
 
 
-function Button({name, estilo, link, }) {
+function Button({name, estilo, link, funcion }) {
     return ( 
         <StyledContainer>
-            <StyledButton type={"button"} estilo={estilo} > 
+            <StyledButton type={"button"} estilo={estilo} onClick={funcion} > 
             
                 <Link className="link" to={link}>{name}</Link>
                 
