@@ -2,7 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import Titulo from "../atoms/Titulo";
 import { Link } from "react-router-dom";
 import Login from "../../pages/Login";
-export default function Banner() {
+
+function Banner() {
   const [isButtonVisible, setIsButtonVisible] = useState(false);
   const buttonRef = useRef(null);
 
@@ -27,3 +28,5 @@ export default function Banner() {
     </div>
   );
 }
+
+export default Banner;

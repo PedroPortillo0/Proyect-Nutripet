@@ -75,8 +75,7 @@ function FromGraficaTemperatura() {
                         {/* <Line type="monotone" dataKey="humedad" stroke="#82ca9d" /> */}
                         </LineChart>
                 </div>
-
-
+                
                 <div>
                     <FromGraficaHumedad/>
                 </div>

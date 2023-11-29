@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import pollito from "../../assets/img/imagenes/polloLanding.svg";
 
-export default function Nosotros({ medida }) {
+function Nosotros({ medida }) {
   const [shouldShowImage, setShouldShowImage] = useState(false);
   const [showText,setShowText] = useState(false);
 
@@ -34,3 +34,5 @@ export default function Nosotros({ medida }) {
     </div>
   );
 }
+
+export default Nosotros;

@@ -1,7 +1,7 @@
 import Enlaces from "../atoms/Enlaces";
 
 
-export default function GroupEnlaces() {
+function GroupEnlaces() {
   return (
     <div className="flex gap-x-12">
       <Enlaces texto={"Inicio"} lugar={"inicio"}/>
@@ -10,3 +10,5 @@ export default function GroupEnlaces() {
     </div>
   )
 }
+
+export default GroupEnlaces;

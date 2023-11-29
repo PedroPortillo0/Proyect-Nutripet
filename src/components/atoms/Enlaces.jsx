@@ -1,6 +1,6 @@
 
 
-export default function Enlaces({texto,lugar,callback}) {
+function Enlaces({texto,lugar,callback}) {
     let hasFuction = callback;
     const handleClik = ()=>{
 
@@ -15,3 +15,5 @@ export default function Enlaces({texto,lugar,callback}) {
     </a>
   )
 }
+
+export default Enlaces;

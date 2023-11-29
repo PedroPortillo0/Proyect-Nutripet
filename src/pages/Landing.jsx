@@ -7,7 +7,7 @@ import FooterLandig from "../components/organism/FooterLandig";
 
 
 
-export default function Landing() {
+function Landing() {
 
   const scrollY = useScrollPosition();
 
@@ -24,3 +24,5 @@ export default function Landing() {
     </div>
   )
 }
+
+export default Landing;
